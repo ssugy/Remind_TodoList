@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--프래그먼트라고 레이아웃 자체를 프래그먼트로 하지는 않음. 베이스는 리니어로 만듬-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</LinearLayout>
