@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="36dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_title_topleft_circle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_prodisplay_bold"
+                        android:text="Log in  to Brand"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/login_2"
+                        android:textSize="32sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="38dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="154dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="start"
+                            android:backgroundTint="@color/white"
+                            android:drawableLeft="@drawable/ic_facebook"
+                            android:elevation="20dp"
+                            android:fontFamily="@font/sf_prodisplay_regular"
+                            android:text="Facebook"
+                            android:textAllCaps="false"
+                            android:textColor="@color/font_1"
+                            android:textSize="14sp" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:layout_width="154dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="end"
+                            android:backgroundTint="@color/white"
+                            android:drawableLeft="@drawable/ic_google"
+                            android:elevation="20dp"
+                            android:fontFamily="@font/sf_prodisplay_regular"
+                            android:text="Google"
+                            android:textAllCaps="false"
+                            android:textColor="@color/font_1"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingTop="38dp">
+
+                        <ImageView
+                            android:layout_width="96dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/line_1" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Or Log In Using Email" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:layout_width="96dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="@color/line_1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="41dp">
+
+<!--                        아이디-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="4dp"
+                            android:fontFamily="@font/sf_prodisplay_regular"
+                            android:text="EMAIL"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:background="@drawable/login_edittext"
+                            android:fontFamily="@font/sf_prodisplay_regular"
+                            android:gravity="center|start"
+                            android:hint="email"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingVertical="23dp"
+                            android:paddingStart="20dp"
+                            android:textSize="15sp" />
+
+<!--                        패스워드-->
+                        <TextView
+                            android:paddingTop="16dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="4dp"
+                            android:fontFamily="@font/sf_prodisplay_regular"
+                            android:text="PASSWORD"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:background="@drawable/login_edittext"
+                            android:fontFamily="@font/sf_prodisplay_regular"
+                            android:gravity="center|start"
+                            android:hint="password"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:paddingVertical="23dp"
+                            android:paddingStart="20dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:paddingTop="18dp"
+                            android:textAlignment="textEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_prodisplay_regular"
+                            android:text="Forgot Password?"
+                            android:paddingBottom="14dp"
+                            android:textSize="13sp" />
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:text="Log In"
+                            android:fontFamily="@font/sf_prodisplay_bold"/>
+<!--                            android:background="@drawable/title_btn_bg" 이게 안드로이 테마때문에 안됨-->
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_title_bottom_maskgroup" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

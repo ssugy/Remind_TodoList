@@ -1,5 +1,6 @@
 package com.example.remind_todolist
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -26,7 +27,7 @@ class SplashActivity : BaseActivity() {
 
     //    자동으로 넘어가는 핸들러 만들어야 된다.
     override fun setValues() {
-
+        splashAction()
     }
 
     //    핸들러의 기본은 루퍼부터 시작
@@ -34,12 +35,11 @@ class SplashActivity : BaseActivity() {
         val handler = Handler(Looper.getMainLooper())
         // 자세히 함수를 보면, 파라미터가 람다에 밀리세컨드가 포함되어 있다.
         handler.postDelayed({
-            
+            val myIntent = Intent(mContext, MainActivity::class.java)
+            startActivity(myIntent)
         },2500)
-
     }
 
     override fun setupEvents() {
-
     }
 }

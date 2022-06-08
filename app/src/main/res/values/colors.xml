@@ -15,4 +15,13 @@
     <color name="fresh_4">#F2EFDC</color>
     <color name="fresh_5">#F2CDA0</color>
 
+<!--    로그인용-->
+    <color  name="login_1">#7189FF</color>
+    <color  name="login_2">#253274</color>
+    <color  name="font_1">#99253274</color>
+    <color  name="line_1">#26253274</color>
+    <color  name="main_28">#47253274</color>
+    <color  name="main_color">#7189ff</color>
+
+
 </resources>
