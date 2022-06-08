@@ -137,6 +137,7 @@
                             android:textStyle="bold" />
 
                         <EditText
+                            android:id="@+id/emailEdt"
                             android:layout_width="match_parent"
                             android:layout_height="64dp"
                             android:background="@drawable/login_edittext"
@@ -162,6 +163,7 @@
                             android:textStyle="bold" />
 
                         <EditText
+                            android:id="@+id/passwordEdt"
                             android:layout_width="match_parent"
                             android:layout_height="64dp"
                             android:background="@drawable/login_edittext"
@@ -186,12 +188,19 @@
                             android:textSize="13sp" />
 
                         <Button
+                            android:id="@+id/loginBtn"
                             android:layout_width="match_parent"
-                            android:layout_height="64dp"
+                            android:layout_height="wrap_content"
                             android:text="Log In"
                             android:fontFamily="@font/sf_prodisplay_bold"/>
-<!--                            android:background="@drawable/title_btn_bg" 이게 안드로이 테마때문에 안됨-->
 
+                        <Button
+                            android:id="@+id/signUpBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Up"
+                            android:fontFamily="@font/sf_prodisplay_bold"/>
+<!--                            android:background="@drawable/title_btn_bg" 이게 안드로이 테마때문에 안됨-->
 
                     </LinearLayout>
                 </LinearLayout>

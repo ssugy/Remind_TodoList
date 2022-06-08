@@ -13,11 +13,21 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        setValues()
+        setupEvents()
     }
 
     override fun setValues() {
+
     }
 
     override fun setupEvents() {
+        loginBinding.loginBtn.setOnClickListener {
+
+        }
+
+        loginBinding.signUpBtn.setOnClickListener {
+
+        }
     }
 }
