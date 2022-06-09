@@ -49,4 +49,8 @@ dependencies {
 
     // 로티 - 스플래시용
     implementation 'com.airbnb.android:lottie:5.2.0'
+
+    // 레트로핏 - 서버용
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }
