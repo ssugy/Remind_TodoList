@@ -37,8 +37,9 @@ class SplashActivity : BaseActivity() {
         val handler = Handler(Looper.getMainLooper())
         // 자세히 함수를 보면, 파라미터가 람다에 밀리세컨드가 포함되어 있다.
         handler.postDelayed({
-            val myIntent = Intent(mContext, MainActivity::class.java)
+            val myIntent = Intent(mContext, LoginActivity::class.java)
             startActivity(myIntent)
+            finish()
         },2500)
 
         getDeviceToken()

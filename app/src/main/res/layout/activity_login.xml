@@ -195,7 +195,7 @@
                             android:fontFamily="@font/sf_prodisplay_bold"/>
 
                         <Button
-                            android:id="@+id/signUpBtn"
+                            android:id="@+id/mainSignUpBtn"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Sign Up"

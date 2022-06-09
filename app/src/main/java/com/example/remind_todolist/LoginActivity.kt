@@ -1,5 +1,6 @@
 package com.example.remind_todolist
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -26,8 +27,14 @@ class LoginActivity : BaseActivity() {
 
         }
 
-        loginBinding.signUpBtn.setOnClickListener {
-
+        loginBinding.mainSignUpBtn.setOnClickListener {
+            val myIntent = Intent(mContext, SignUpActivity::class.java)
+            startActivity(myIntent)
         }
+    }
+
+//    모든 조건 통과시 실행할 회원가입 api
+    fun signUp(){
+
     }
 }
