@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
+import android.util.Log
 import com.example.remind_todolist.bases.BaseActivity
+import com.google.firebase.messaging.FirebaseMessaging
 
 /*
 스플래시용 엑티비티
@@ -38,8 +40,17 @@ class SplashActivity : BaseActivity() {
             val myIntent = Intent(mContext, MainActivity::class.java)
             startActivity(myIntent)
         },2500)
+
+        getDeviceToken()
     }
 
     override fun setupEvents() {
+    }
+
+    // 키해시 가져오기
+    fun getDeviceToken(){
+        FirebaseMessaging.getInstance().token.addOnCompleteListener {
+            Log.d("token", "getDeviceToken: ${it.result}")
+        }
     }
 }
