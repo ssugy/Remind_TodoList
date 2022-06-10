@@ -1,15 +1,11 @@
 package com.example.remind_todolist
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.remind_todolist.API.APIList
-import com.example.remind_todolist.API.BasicResponse
 import com.example.remind_todolist.API.ServerAPI
 import com.example.remind_todolist.bases.BaseActivity
 import com.example.remind_todolist.databinding.ActivitySignUpBinding
-import retrofit2.Call
 import retrofit2.create
 
 class SignUpActivity : BaseActivity() {
