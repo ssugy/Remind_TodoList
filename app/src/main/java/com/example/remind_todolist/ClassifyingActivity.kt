@@ -4,13 +4,17 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.example.remind_todolist.bases.BaseActivity
 import com.example.remind_todolist.databinding.ActivityClassifyingBinding
+import com.example.remind_todolist.tflite.Classifier
+import java.io.IOException
 
 class ClassifyingActivity : BaseActivity() {
 
     lateinit var binding : ActivityClassifyingBinding
+    lateinit var cls : Classifier
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +39,17 @@ class ClassifyingActivity : BaseActivity() {
         binding.classifyBtn.setOnClickListener {
             val drawImg : Bitmap = binding.drawView.getBitmap()
         }
+
+        cls = Classifier(mContext)
+        try {
+            cls.init()
+        } catch (e : IOException){
+            Log.d("버그", "분류 실패", e)
+        }
     }
 
+
     override fun setupEvents() {
+
     }
 }
