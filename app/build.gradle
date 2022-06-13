@@ -56,4 +56,7 @@ dependencies {
 
     // 안드로이드 draw
     implementation 'com.github.divyanshub024:AndroidDraw:v0.1'
+
+    // 텐서플로 라이트
+    implementation 'org.tensorflow:tensorflow-lite:2.8.0'
 }
