@@ -35,6 +35,10 @@ class MainActivity : BaseActivity() {
             startActivity(myIntent)
             finish()
         }
+
+        binding.handWritingClassificationBtn.setOnClickListener {
+
+        }
     }
 
     override fun setupEvents() {

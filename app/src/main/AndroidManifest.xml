@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Remind_TodoList"
         tools:targetApi="31">
         <activity
+            android:name=".ClassifyingActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
