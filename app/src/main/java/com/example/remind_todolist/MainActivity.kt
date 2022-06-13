@@ -1,7 +1,9 @@
 package com.example.remind_todolist
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.divyanshu.draw.activity.DrawingActivity
 import com.example.remind_todolist.bases.BaseActivity
 import com.example.remind_todolist.databinding.ActivityMainBinding
 
@@ -21,6 +23,10 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
+        binding.drawingBtn.setOnClickListener {
+            val myIntent = Intent(mContext, DrawingActivity::class.java)
+            startActivity(myIntent)
+        }
     }
 
     override fun setupEvents() {
