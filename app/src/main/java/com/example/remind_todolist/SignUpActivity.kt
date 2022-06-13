@@ -76,6 +76,7 @@ class SignUpActivity : BaseActivity() {
 //    모든 조건을 통과하면 실행할 api
     fun signUp(){
         // 이슈체크하기위한 커밋
+        // 이슈체크하기위한 커밋2
     }
 
 }
