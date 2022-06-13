@@ -21,7 +21,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mContext = this
 
-        retrofit = ServerAPI.getRetrofit()
+        retrofit = ServerAPI.getRetrofit(mContext)  // 헤더 가로채는 순간부터 컨텍스트 넘겨야됨.
         apiListService = retrofit.create(APIListService::class.java)
     }
 
