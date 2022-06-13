@@ -29,4 +29,8 @@ interface APIListService {
         @Field("email") email: String,
         @Field("password") password : String,
     ) : Call<BasicResponse>
+
+    // 유저 정보
+    @GET("/user")
+    fun getRequestMyInfo() : Call<BasicResponse>
 }

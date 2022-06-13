@@ -1,14 +1,19 @@
 package com.example.remind_todolist
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.HandlerThread
 import android.os.Looper
 import android.util.Log
+import android.widget.Toast
+import com.example.remind_todolist.API.BasicResponse
 import com.example.remind_todolist.bases.BaseActivity
+import com.example.remind_todolist.utils.ContextUtil
+import com.example.remind_todolist.utils.GlobalData
 import com.google.firebase.messaging.FirebaseMessaging
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 /*
 스플래시용 엑티비티
@@ -18,6 +23,8 @@ import com.google.firebase.messaging.FirebaseMessaging
 3. 인텐트
  */
 class SplashActivity : BaseActivity() {
+
+    var isTokenOk = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,12 +39,25 @@ class SplashActivity : BaseActivity() {
         splashAction()
     }
 
-    //    핸들러의 기본은 루퍼부터 시작
+    //    스플래쉬에서 토큰확인해서 자동로그인 확인하기
     fun splashAction() {
         val handler = Handler(Looper.getMainLooper())
         // 자세히 함수를 보면, 파라미터가 람다에 밀리세컨드가 포함되어 있다.
         handler.postDelayed({
-            val myIntent = Intent(mContext, LoginActivity::class.java)
+            var myIntent = Intent(mContext, LoginActivity::class.java)
+
+            if (isTokenOk && ContextUtil.getAutoLogin(mContext)) {
+                Toast.makeText(
+                    mContext,
+                    "${GlobalData.loginUser!!.nickname}님 환영합니다.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                myIntent = Intent(mContext, MainActivity::class.java)
+            }
+            else {
+                myIntent = Intent(mContext, LoginActivity::class.java)
+            }
+
             startActivity(myIntent)
             finish()
         },2500)
@@ -46,6 +66,20 @@ class SplashActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+        apiListService.getRequestMyInfo().enqueue(object : Callback<BasicResponse> {
+            override fun onResponse(call: Call<BasicResponse>, response: Response<BasicResponse>) {
+                if (response.isSuccessful) {
+                    val br = response.body()!!
+
+                    isTokenOk = true
+                    GlobalData.loginUser = br.data.user
+                }
+            }
+
+            override fun onFailure(call: Call<BasicResponse>, t: Throwable) {
+
+            }
+        })
     }
 
     // 키해시 가져오기
