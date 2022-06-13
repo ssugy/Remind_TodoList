@@ -6,10 +6,7 @@ import com.example.remind_todolist.bases.BaseActivity
 import com.example.remind_todolist.databinding.ActivityMainBinding
 
 /**
- * 1. 탭레이아웃 작성
- * 2. 바텀네비게이션
- * 3. 뷰페이저 연결
- *
+ * 메인엑티비티에는 이제 인공지능쪽 연결 예정
  */
 class MainActivity : BaseActivity() {
 

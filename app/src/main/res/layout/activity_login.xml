@@ -177,15 +177,23 @@
                             android:paddingStart="20dp"
                             android:textSize="15sp" />
 
-                        <TextView
-                            android:paddingTop="18dp"
-                            android:textAlignment="textEnd"
-                            android:layout_width="match_parent"
+<!--                        <TextView-->
+<!--                            android:paddingTop="18dp"-->
+<!--                            android:textAlignment="textEnd"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/sf_prodisplay_regular"-->
+<!--                            android:text="Forgot Password?"-->
+<!--                            android:paddingBottom="14dp"-->
+<!--                            android:textSize="13sp" />-->
+                        <CheckBox
+                            android:id="@+id/autoLoginCb"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="Auto Login"
                             android:fontFamily="@font/sf_prodisplay_regular"
-                            android:text="Forgot Password?"
-                            android:paddingBottom="14dp"
-                            android:textSize="13sp" />
+                            android:textColor="@color/font_1"
+                            android:textSize="11sp"/>
 
                         <Button
                             android:id="@+id/loginBtn"
