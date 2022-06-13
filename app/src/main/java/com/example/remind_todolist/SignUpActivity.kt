@@ -2,6 +2,7 @@ package com.example.remind_todolist
 
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
@@ -12,6 +13,7 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.regex.Pattern
 
 class SignUpActivity : BaseActivity() {
 
@@ -52,7 +54,18 @@ class SignUpActivity : BaseActivity() {
         }
 
         binding.emailDuplBtn.setOnClickListener {
-            dupCheck("EMAIL", binding.emailEdt.text.toString())
+            //이메일 형식체크를 먼저해야됨
+            val email = binding.emailEdt.text.toString()
+            val pattern: Pattern = Patterns.EMAIL_ADDRESS
+
+            if (pattern.matcher(email).matches()) {
+                //이메일 맞음!
+                dupCheck("EMAIL", binding.emailEdt.text.toString())
+            } else {
+                //이메일 아님!
+                Toast.makeText(mContext, "이메일 형식이 맞지 않습니다.", Toast.LENGTH_SHORT).show()
+            }
+
         }
         binding.nickDupBtn.setOnClickListener {
             dupCheck("NICK_NAME", binding.nickEdt.text.toString())
