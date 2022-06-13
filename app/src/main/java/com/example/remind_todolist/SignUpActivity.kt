@@ -77,6 +77,7 @@ class SignUpActivity : BaseActivity() {
     fun signUp(){
         // 이슈체크하기위한 커밋
         // 이슈체크하기위한 커밋2
+        // 이슈체크하기위한 커밋3
     }
 
 }
