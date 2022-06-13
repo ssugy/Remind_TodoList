@@ -2,7 +2,6 @@ package com.example.remind_todolist
 
 import android.graphics.Bitmap
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
@@ -10,6 +9,7 @@ import com.example.remind_todolist.bases.BaseActivity
 import com.example.remind_todolist.databinding.ActivityClassifyingBinding
 import com.example.remind_todolist.tflite.Classifier
 import java.io.IOException
+import java.util.*
 
 class ClassifyingActivity : BaseActivity() {
 
@@ -30,7 +30,7 @@ class ClassifyingActivity : BaseActivity() {
         binding.drawView.setBackgroundColor(Color.BLACK)    //배경색 - 파이썬 학습할때 색상 동일하게 적용.
         binding.drawView.setColor(Color.WHITE)  // 손글자 색 - 파이썬 학습 색상 동일하게.
 
-
+        val resultView = binding.resultTxt
         
 //        클리어 버튼 - 누르면 그려놓은 것 초기화
         binding.clearBtn.setOnClickListener {
@@ -40,6 +40,11 @@ class ClassifyingActivity : BaseActivity() {
 //        분류버튼(핵심)
         binding.classifyBtn.setOnClickListener {
             val drawImg : Bitmap = binding.drawView.getBitmap()
+
+            val res = cls.classify(drawImg)
+            val outStr =
+                res?.let { it1 -> String.format(Locale.ENGLISH, "%d, %.0f%%", it1.first, res.second * 100.0f) }
+            resultView.text = outStr
         }
 
         cls = Classifier(mContext)
@@ -50,6 +55,11 @@ class ClassifyingActivity : BaseActivity() {
         }
     }
 
+    // 자원해제
+    override fun onDestroy() {
+        cls.finish()
+        super.onDestroy()
+    }
 
     override fun setupEvents() {
 
