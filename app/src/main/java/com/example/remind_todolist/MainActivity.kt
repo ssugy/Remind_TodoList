@@ -37,7 +37,8 @@ class MainActivity : BaseActivity() {
         }
 
         binding.handWritingClassificationBtn.setOnClickListener {
-
+            val myIntent = Intent(mContext, ClassifyingActivity::class.java)
+            startActivity(myIntent)
         }
     }
 
