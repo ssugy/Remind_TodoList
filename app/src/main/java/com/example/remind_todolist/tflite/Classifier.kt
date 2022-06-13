@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.AssetFileDescriptor
 import android.content.res.AssetManager
 import android.graphics.Bitmap
+import android.util.Pair
 import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.ByteBuffer
@@ -46,6 +47,9 @@ class Classifier(
         initModelShape()
     }
 
+    // 모델의 출력 클래스 수를 담을 멤버 변수 선언
+    var modelOutputClasses : Int = 0
+
     var modelInputChannel : Int = 0
     var modelInputWidth : Int = 0
     var modelInputHeight : Int = 0
@@ -58,6 +62,10 @@ class Classifier(
         modelInputChannel = inputShape?.get(0) ?: 0
         modelInputWidth = inputShape?.get(1) ?: 0
         modelInputHeight = inputShape?.get(2) ?: 0
+
+        val outputTensor = interpreter!!.getOutputTensor(0)
+        val outputShape = outputTensor.shape()
+        modelOutputClasses = outputShape[1]
     }
 
     // 이미지 보간 처리
@@ -88,4 +96,33 @@ class Classifier(
         return  byteBuffer
     }
 
+    
+    ///////////////////////// 여기서부터는 제대로 확인하지 못함
+    private fun argmax(array: FloatArray): Pair<Int, Float>? {
+        var argmax = 0
+        var max = array[0]
+        for (i in 1 until array.size) {
+            val f = array[i]
+            if (f > max) {
+                argmax = i
+                max = f
+            }
+        }
+        return Pair(argmax, max)
+    }
+
+    fun classify(image: Bitmap?): Pair<Int, Float>? {
+        val buffer = convertBitmapToGrayByteBuffer(resizeBitmap(image!!))
+        val result = Array(1) {
+            FloatArray(
+                modelOutputClasses
+            )
+        }
+        interpreter!!.run(buffer, result)
+        return argmax(result[0])
+    }
+
+    fun finish() {
+        if (interpreter != null) interpreter!!.close()
+    }
 }

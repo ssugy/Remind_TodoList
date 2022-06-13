@@ -29,6 +29,8 @@ class ClassifyingActivity : BaseActivity() {
         binding.drawView.setStrokeWidth(100f)
         binding.drawView.setBackgroundColor(Color.BLACK)    //배경색 - 파이썬 학습할때 색상 동일하게 적용.
         binding.drawView.setColor(Color.WHITE)  // 손글자 색 - 파이썬 학습 색상 동일하게.
+
+
         
 //        클리어 버튼 - 누르면 그려놓은 것 초기화
         binding.clearBtn.setOnClickListener {
