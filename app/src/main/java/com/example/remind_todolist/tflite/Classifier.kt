@@ -25,7 +25,7 @@ class Classifier(
     // 2. 에셋폴더에있는, tflite파일을 읽어오는 함수 구현 -> ByteBuffer 클래스모델 반환
     // 여기 각각 분석해야됨
     fun loadModelFile(tfliteModelName : String): ByteBuffer{
-        val assetManager : AssetManager = context.assets
+        val assetManager : AssetManager = context.assets        // 에셋 매니저 객체
         val assetFileDescriptor : AssetFileDescriptor = assetManager.openFd(tfliteModelName)
         val fileInputStream = FileInputStream(assetFileDescriptor.fileDescriptor)
         val fileChannel = fileInputStream.channel
