@@ -1,14 +1,12 @@
 package com.example.remind_todolist.fragments
 
 import android.os.Bundle
-import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.remind_todolist.R
-import com.example.remind_todolist.databinding.FragmentAiBinding
 import com.example.remind_todolist.databinding.FragmentSettingBinding
 import com.example.remind_todolist.utils.GlobalData
 
@@ -37,10 +35,16 @@ class SettingFragment : BaseFragment() {
 
     override fun setValues() {
         // 여기에 프로필을 적용하면 되나? 최초에 1번만 서버에서 가져와서 적용하면될듯? 맞나? - 맞음
-        GlobalData
-
+        setProfileImgAndNickName()  // 프로필 이미지와, 닉네임 적용
     }
 
     override fun setupEvents() {
+    }
+
+    fun setProfileImgAndNickName(){
+        if (GlobalData.loginUser != null){
+            Glide.with(this).load(GlobalData.loginUser!!.profileImg).into(binding.settingUserCircleImg)
+            binding.settingUserNickName.text = GlobalData.loginUser!!.nickname
+        }
     }
 }
