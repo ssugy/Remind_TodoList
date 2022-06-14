@@ -1,7 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--프래그먼트라고 레이아웃 자체를 프래그먼트로 하지는 않음. 베이스는 리니어로 만듬-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?><!--프래그먼트라고 레이아웃 자체를 프래그먼트로 하지는 않음. 베이스는 리니어로 만듬-->
 
-</LinearLayout>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/logOutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그아웃" />
+
+        <Button
+            android:id="@+id/drawingBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="그림 그리기" />
+
+        <Button
+            android:id="@+id/handWritingClassificationBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="손글씨 분류하기" />
+
+    </LinearLayout>
+</layout>

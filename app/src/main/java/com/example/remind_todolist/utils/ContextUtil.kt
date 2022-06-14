@@ -2,6 +2,9 @@ package com.example.remind_todolist.utils
 
 import android.content.Context
 
+/**
+ * ContextUtil이라는 의미가 context를 받아서 유틸로 사용하겠다는 의미.
+ */
 class ContextUtil {
 
     companion object {
@@ -30,6 +33,7 @@ class ContextUtil {
             return pref.getBoolean(AUTO_LOGIN, false)
         }
 
+        //
         fun clear (context: Context) {
             val pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
             pref.edit().clear().apply()

@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.remind_todolist.R
 
-class TodoFragment : Fragment() {
+class TodoFragment : BaseFragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,5 +16,17 @@ class TodoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_todo, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setValues()
+        setupEvents()
+    }
+    override fun setValues() {
+    }
+
+    override fun setupEvents() {
     }
 }
