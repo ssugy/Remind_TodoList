@@ -62,4 +62,8 @@ dependencies {
 
     // circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // 글라이드 - 이미지 로드용
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
 }
