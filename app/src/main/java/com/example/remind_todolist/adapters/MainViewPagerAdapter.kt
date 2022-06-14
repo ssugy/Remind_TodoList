@@ -3,7 +3,7 @@ package com.example.remind_todolist.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.remind_todolist.fragments.GoalFragment
+import com.example.remind_todolist.fragments.AIFragment
 import com.example.remind_todolist.fragments.SettingFragment
 import com.example.remind_todolist.fragments.TodoFragment
 
@@ -13,7 +13,7 @@ class MainViewPagerAdapter(fa : FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> GoalFragment()
+            0 -> AIFragment()
             1 -> TodoFragment()
             else -> SettingFragment()
         }

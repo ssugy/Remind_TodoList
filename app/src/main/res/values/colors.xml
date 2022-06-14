@@ -23,5 +23,9 @@
     <color  name="main_28">#47253274</color>
     <color  name="main_color">#7189ff</color>
 
+<!--    최상단바 와이파이있는 곳 색상-->
+    <color  name="setting_main_dark">#4F73EA</color>
+    <color  name="setting_main_light">#5E81F4</color>
+
 
 </resources>

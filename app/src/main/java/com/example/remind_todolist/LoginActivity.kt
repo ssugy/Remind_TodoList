@@ -39,19 +39,18 @@ class LoginActivity : BaseActivity() {
                     call: Call<BasicResponse>,
                     response: Response<BasicResponse>
                 ) {
-
                     if (response.isSuccessful) {
                         val br = response.body()!!
 
                         ContextUtil.setLoginToken(mContext, br.data.token)
                         ContextUtil.setAutoLogin(mContext, loginBinding.autoLoginCb.isChecked)
-                        GlobalData.loginUser = br.data.user
+                        GlobalData.loginUser = br.data.user     // 여기에서 로그인하면 유저 데이터를 가지고 있다. -> 세팅에서 사용함
 
-                        Toast.makeText(
-                            mContext,
-                            "${GlobalData.loginUser!!.nickname}님 환영합니다.",
-                            Toast.LENGTH_SHORT
-                        ).show()
+//                        Toast.makeText(
+//                            mContext,
+//                            "${GlobalData.loginUser!!.nickname}님 환영합니다.",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
 
                         val myIntent = Intent(mContext, MainActivity::class.java)
                         startActivity(myIntent)

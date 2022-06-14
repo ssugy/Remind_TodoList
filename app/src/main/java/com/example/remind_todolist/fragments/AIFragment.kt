@@ -1,23 +1,21 @@
 package com.example.remind_todolist.fragments
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import com.divyanshu.draw.activity.DrawingActivity
 import com.example.remind_todolist.ClassifyingActivity
 import com.example.remind_todolist.LoginActivity
 import com.example.remind_todolist.R
-import com.example.remind_todolist.databinding.FragmentGoalBinding
+import com.example.remind_todolist.databinding.FragmentAiBinding
 import com.example.remind_todolist.utils.ContextUtil
 
-class GoalFragment() : BaseFragment(){
+class AIFragment() : BaseFragment(){
 
-    lateinit var binding : FragmentGoalBinding
+    lateinit var binding : FragmentAiBinding
 
     // 프래그먼트는 onCreateView이다
     // 뷰를 리턴하는데, 그게 프래그먼트여야 한다.
@@ -29,7 +27,7 @@ class GoalFragment() : BaseFragment(){
         savedInstanceState: Bundle?
     ): View? {
         // 여기부분 이해를 해야됨. xml 레이아웃 파일에 대한 뷰를 생성할때에는
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_goal, container, false  )
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_ai, container, false  )
         return binding.root
     }
 

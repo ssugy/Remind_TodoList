@@ -59,4 +59,7 @@ dependencies {
 
     // 텐서플로 라이트
     implementation 'org.tensorflow:tensorflow-lite:2.8.0'
+
+    // circle image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
