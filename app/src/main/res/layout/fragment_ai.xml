@@ -8,23 +8,41 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/logOutBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="로그아웃" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/drawingBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="그림 그리기" />
+            android:background="@color/purple_500"
+            android:fontFamily="@font/sf_prodisplay_regular"
+            android:text="그림 그리기"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/handWritingClassificationBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="손글씨 분류하기" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/purple_200"
+            android:text="손글씨 분류하기"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/imageClassificationBtn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/teal_700"
+            android:text="이미지 분류하기"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </layout>
