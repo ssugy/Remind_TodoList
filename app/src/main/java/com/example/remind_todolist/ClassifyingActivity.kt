@@ -7,14 +7,14 @@ import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.example.remind_todolist.bases.BaseActivity
 import com.example.remind_todolist.databinding.ActivityClassifyingBinding
-import com.example.remind_todolist.tflite.Classifier
+import com.example.remind_todolist.tflite.ClassifierHandNum
 import java.io.IOException
 import java.util.*
 
 class ClassifyingActivity : BaseActivity() {
 
     lateinit var binding : ActivityClassifyingBinding
-    lateinit var cls : Classifier
+    lateinit var cls : ClassifierHandNum
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,9 +47,9 @@ class ClassifyingActivity : BaseActivity() {
             resultView.text = outStr
         }
 
-        cls = Classifier(mContext)
+        cls = ClassifierHandNum(mContext)
         try {
-            cls.init()
+            cls.initHandNumber()
         } catch (e : IOException){
             Log.d("버그", "분류 실패", e)
         }
